@@ -1,0 +1,85 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GorselProgramlamaOdevi.KrediHesaplama"
+             Title="Kredi Hesaplama"
+             BackgroundColor="Black">
+    <StackLayout Padding="20" Spacing="10">
+        <Picker x:Name="LoanTypePicker" Title="Kredi Türünü Seçin" TextColor="Black" SelectedIndexChanged="OnPickerSelectedIndexChanged">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Ihtiyaç Kredisi</x:String>
+                    <x:String>Konut Kredisi</x:String>
+                    <x:String>Taşıt Kredisi</x:String>
+                    <x:String>Ticari Kredisi</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Label Text="Kredi Tutarı (₺):"
+               FontAttributes="Bold" 
+               TextColor="Orange" />
+        <Entry x:Name="AmountEntry" 
+               Placeholder="Örneğin: 50000"
+               Keyboard="Numeric" 
+               TextColor="Orange" 
+               PlaceholderColor="Gray" />
+
+
+        <Label Text="Faiz Oranı (%):" 
+               FontAttributes="Bold" 
+               TextColor="Orange" />
+        <Entry x:Name="InterestRateEntry" 
+               Placeholder="Örneğin: 1.5" 
+               Keyboard="Numeric" 
+               TextColor="Orange" 
+               PlaceholderColor="Gray" />
+
+        <!-- Term Entry -->
+        <Label Text="Kredi Vadesi (Ay):" 
+               FontAttributes="Bold" 
+               TextColor="Orange" />
+        <Entry x:Name="TermEntry" 
+               Placeholder="Örneğin: 24" 
+               Keyboard="Numeric" 
+               TextColor="Orange" 
+               PlaceholderColor="Gray" />
+
+
+
+        <Button Text="Kredi Hesapla" 
+                Clicked="OnCalculateClicked" 
+                BackgroundColor="Orange" 
+                TextColor="White" 
+                FontAttributes="Bold" 
+                CornerRadius="10" 
+                HeightRequest="50" />
+
+        <StackLayout Margin="10" Orientation="Vertical">
+
+            <Label Text="Aylık Taksit: ₺" 
+                   x:Name="MonthlyPaymentLabel" 
+                   FontSize="18" 
+                   TextColor="Orange" 
+                   FontAttributes="Bold" />
+        </StackLayout>
+
+        <StackLayout Margin="10" Orientation="Vertical">
+
+            <Label Text="Toplam Ödeme: ₺" 
+                   x:Name="TotalPaymentLabel" 
+                   FontSize="18" 
+                   TextColor="Orange" 
+                   FontAttributes="Bold" />
+
+        </StackLayout>
+
+
+        <StackLayout Margin="10" Orientation="Vertical">
+            <Label Text="Toplam Faiz: ₺" 
+                   x:Name="TotalInterestLabel" 
+                   FontSize="18" 
+                   TextColor="Orange" 
+                   FontAttributes="Bold" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

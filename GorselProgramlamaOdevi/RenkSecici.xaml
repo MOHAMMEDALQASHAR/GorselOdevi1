@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GorselProgramlamaOdevi.RenkSecici"
+             Title="Renk Seçici">
+    <Grid x:Name="Container" BackgroundColor="Black">
+        <Frame Margin="10 , 0 , 10 , 0" VerticalOptions="Center">
+            <VerticalStackLayout Spacing="15" VerticalOptions="Center" >
+                <Label FontAttributes="Bold" FontSize="Large" 
+                   HorizontalTextAlignment="Center"
+                   Text="Renk Seçici"/>
+
+                <Label Text="Kırmızı Ton : "/>
+                <Slider x:Name="sldRed"
+                    ThumbColor="Red"
+                    MinimumTrackColor="Red"
+                    ValueChanged="slider_ValueChanged"
+                    />
+
+
+                <Label Text="Yeşil Ton : "/>
+                <Slider x:Name="sldGreen"
+                    ThumbColor="Green"
+                    MinimumTrackColor="Green"
+                    ValueChanged="slider_ValueChanged"
+                    />
+
+
+                <Label Text="Mavi Ton : "/>
+                <Slider x:Name="sldBlue"
+                    ThumbColor="Blue"
+                    MinimumTrackColor="Blue"
+                    ValueChanged="slider_ValueChanged"
+                    />
+
+                <Frame CornerRadius="25" HorizontalOptions="Center">
+                    <HorizontalStackLayout>
+                        <Label x:Name="lblHex"
+                           HorizontalTextAlignment="End"
+                           Text="#000000"/>
+
+                        <ImageButton 
+                        Margin="10 ,0 , 0 ,0"
+                        HeightRequest="25"
+                        Source="copy.svg"
+                        WidthRequest="25"
+                        VerticalOptions="Center"
+                        Clicked="ImageButton_Clicked"/>
+
+                    </HorizontalStackLayout>
+                </Frame>
+   
+                <Button Text="Random"
+                    BackgroundColor="#ab3527"
+                    x:Name="btnRandom"
+                    TextColor="White"
+                    Clicked="btnRandom_Clicked"
+                    />
+
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>

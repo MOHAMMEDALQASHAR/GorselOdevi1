@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GorselProgramlamaOdevi.VucutKitleIndeksi"
+             Title="VucutKitleIndeksi">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="20"
+            VerticalOptions="CenterAndExpand">
+
+           
+            <Label Text="VKI = kg / (boy * boy)"
+                   FontSize="Title"
+                   TextColor="Orange"
+                   HorizontalOptions="Center" />
+
+            <VerticalStackLayout>
+                <Label Text="Kilonuz (KG):"
+                       FontSize="Large"
+                       TextColor="White" />
+                <Slider x:Name="WeightSlider"
+                        Minimum="20"
+                        Maximum="150"
+                        Value="{Binding VKIM.Weight}"
+                 
+                        ThumbColor="Orange"
+                        MinimumTrackColor="Orange" />
+                <Entry x:Name="WeightEntry"
+                       Text="{Binding VKIM.Weight, Mode=TwoWay}"
+                       Keyboard="Numeric"
+                       HorizontalOptions="Center"
+                       WidthRequest="100"
+                       FontSize="Medium"
+                       TextColor="White" />
+            </VerticalStackLayout>
+
+            <!-- الطول -->
+            <VerticalStackLayout>
+                <Label Text="Boyunuz (CM):"
+                       FontSize="Large"
+                       TextColor="White" />
+                <Slider x:Name="HeightSlider"
+                        Minimum="100"
+                        Maximum="250"
+                        Value="{Binding VKIM.Height}"
+                        
+                        ThumbColor="Orange"
+                        MinimumTrackColor="Orange" />
+                <Entry x:Name="HeightEntry"
+                       Text="{Binding VKIM.Height, Mode=TwoWay}"
+                       Keyboard="Numeric"
+                       HorizontalOptions="Center"
+                       WidthRequest="100"
+                       FontSize="Medium"
+                       TextColor="White" />
+            </VerticalStackLayout>
+
+            <!-- النتيجة -->
+            <VerticalStackLayout>
+                <Label Text="VKI:"
+                       FontSize="Large"
+                       TextColor="Black" />
+                <Label x:Name="ResultLabel"
+                       Text="{Binding VKIM.ResultText}"
+                       FontSize="Large"
+                       TextColor="Orange"
+                       HorizontalOptions="Center" />
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
